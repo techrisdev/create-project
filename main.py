@@ -11,11 +11,16 @@ if not kind == '1':
     kind = '0'
 
 project_name = input("Name of your Project: ")
+projects_directory = "$HOME/dev/Projects/"
+directory = projects_directory + project_name
 
-# Create a directory in $HOME/dev/Projects
-directory = "$HOME/dev/Projects/" + project_name
-os.system("mkdir -p " + directory + "/src")
-
+if kind == '0':
+    # Create the directory in $HOME/dev/Projects
+    os.system("mkdir -p " + directory + "/src")
+else:
+    # Run flutter create
+    os.system("cd " + projects_directory + "; flutter create " + project_name)
+    
 # Create a README file
 os.system("touch " + directory + "/README.md")
 
