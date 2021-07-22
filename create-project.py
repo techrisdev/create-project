@@ -31,7 +31,7 @@ os.system("touch " + directory + "/README.md")
 
 # Create the remote repository on Github
 # Get the access token
-file = open("access_token.txt")
+file = open(os.getenv("HOME") + "/.bin/create-project_access_token.txt")
 token = file.read()[:-1]
 
 github = Github(token)
