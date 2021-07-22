@@ -5,9 +5,10 @@ from github import Github
 print("What kind of Project do you want to create?")
 print("0: Empty (default)")
 print("1: Flutter")
+print("2: Rust")
 kind = input("Number: ")
 
-if not kind == '1':
+if not kind == '1' and not kind == '2':
     # Create an empty project by default
     kind = '0'
 
@@ -18,9 +19,12 @@ directory = projects_directory + project_name
 if kind == '0':
     # Create the directory in $HOME/dev/Projects
     os.system("mkdir -p " + directory + "/src")
-else:
+elif kind == "1":
     # Run flutter create
     os.system("cd " + projects_directory + "; flutter create " + project_name)
+elif kind == "2":
+    # Run cargo new
+    os.system("cd " + projects_directory + "; cargo new " + project_name)
     
 # Create a README file
 os.system("touch " + directory + "/README.md")
