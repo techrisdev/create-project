@@ -34,8 +34,14 @@ os.system("touch " + directory + "/README.md")
 file = open(os.getenv("HOME") + "/.bin/create-project_access_token.txt")
 token = file.read()[:-1]
 
+private = input("Should the Github Repository be private (0 yes, default): ")
+if private == 1:
+    private = False
+else:
+    private = True
+
 github = Github(token)
-github.get_user().create_repo(project_name)
+github.get_user().create_repo(project_name, private=private)
 
 # Create a local git repository and push to the remote repository
 username = github.get_user().login
