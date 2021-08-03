@@ -18,7 +18,7 @@ directory = projects_directory + project_name
 
 if kind == '0':
     # Create the directory in $HOME/dev/Projects
-    os.system("mkdir -p " + directory + "/src")
+    os.system("mkdir -p " + directory)
 elif kind == "1":
     # Run flutter create
     os.system("cd " + projects_directory + "; flutter create " + project_name)
