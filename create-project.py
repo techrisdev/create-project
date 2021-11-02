@@ -1,5 +1,4 @@
 import os
-import subprocess
 from github import Github
 
 print("What kind of Project do you want to create?")
@@ -45,4 +44,4 @@ github.get_user().create_repo(project_name, private=private)
 
 # Create a local git repository and push to the remote repository
 username = github.get_user().login
-os.system("cd " + directory + "; git init; git branch -M main; git add .; git commit -m 'Initial Commit'; git remote add origin https://github.com/" + username + "/" + project_name + ".git; git push -u origin main")
+os.system("cd " + directory + "; git init; git branch -M main; git add .; git commit -m 'Initial Commit'; git remote add origin https://github.com/" + username + "/" + project_name + ".git; git push -u origin main; code .")
